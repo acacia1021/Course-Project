@@ -22,8 +22,11 @@
             <!-- You can use the section above, or you can simply replace collapse navbar-collapse with navbar-default -->
 
             <ul class="nav navbar-nav">
-                <li><a href="#">Recipes</a></li>
-                <li><a href="#">Shopping List</a></li>
+                <!-- Another way of passing the event data? -->
+                <!-- <li><a href="#" (click)="onSelect('recipe', $event)">Recipes</a></li> -->
+
+                <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li>
+                <li><a href="#" (click)="onSelect('shoppingList')">Shopping List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
