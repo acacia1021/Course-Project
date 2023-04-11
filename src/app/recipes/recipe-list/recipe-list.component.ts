@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -11,11 +11,16 @@ export class RecipeListComponent {
   // recipes will be of Recipe type, as an array == to an empty array at first, and then reference the model pieces
   // Here, the pieces are name, description, and imagePath
   recipes: Recipe[] = [
-    new Recipe('A Test Recipe', 'This is simply a Test', 'https://th.bing.com/th/id/OIP.9j6H7W8MRTMeZBv_KfSnIQHaJQ?pid=ImgDet&rs=1')
+    new Recipe('A Test Recipe', 'This is simply a Test', 'https://th.bing.com/th/id/OIP.9j6H7W8MRTMeZBv_KfSnIQHaJQ?pid=ImgDet&rs=1'),
+    new Recipe('A Second Test Recipe', 'This is simply a second Test', 'https://th.bing.com/th/id/OIP.9j6H7W8MRTMeZBv_KfSnIQHaJQ?pid=ImgDet&rs=1')
   ];
 
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 
 
-  
 
 }

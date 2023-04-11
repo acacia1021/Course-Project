@@ -25,6 +25,7 @@
             </span>
         </a> -->
         <app-recipe-item *ngFor="let recipeElement of recipes"
-        [recipe]="recipeElement"></app-recipe-item>
+        [recipe]="recipeElement"
+        (recipeSelected)="onRecipeSelected(recipeElement)"></app-recipe-item>
     </div>
 </div>
