@@ -22,4 +22,15 @@ export class ShoppingListService {
         //Pushed to UI
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+
+    addIngredientsFromRecipe(ingredients: Ingredient[]) {
+        //One option
+        // for (let ingredient of ingredients) {
+        //     this.addIngredient(ingredient);
+        // }
+
+        //Turns an array into a list
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
 }
