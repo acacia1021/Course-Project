@@ -25,6 +25,13 @@ export class RecipeService implements OnInit {
         return this.recipes.slice();
     }
 
+    //The id variable here is the index of the recipe in the recipes list
+    getRecipe(id: number) {
+        // return this.recipes.slice()[id];
+        return this.recipes[id];
+
+    }
+
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.shoppingListService.addIngredientsFromRecipe(ingredients);
     }
